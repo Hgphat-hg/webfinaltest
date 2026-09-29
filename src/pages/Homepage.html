@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietnam | Discover</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <section class="Main">
+
+    </section>
+    <div id="footer-container"></div>
+    <script>
+        fetch('../components/header.html')
+            .then((response) => {
+                if (!response.ok) throw new Error('Could not load the site header.');
+                return response.text();
+            })
+            .then((header) => {
+                document.querySelector('#header-container').innerHTML = header;
+            })
+            .catch((error) => console.error(error));
+        
+        fetch('../components/footer.html')
+            .then((response) => {
+                if (!response.ok) throw new Error('Could not load the site footer.');
+                return response.text();
+            })
+            .then((footer) => {
+                document.querySelector('#footer-container').innerHTML = footer;
+            })
+            .catch((error) => console.error(error));
+    </script>
+</body>
+</html>

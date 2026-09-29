@@ -23,9 +23,20 @@ body {
         }
     }
 }
+
+.Header ul li a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.Header ul li a:hover {
+    color: #FF9999;
+}
+
 .Main {
     width: 75%;
-    margin: 60px auto 0 auto;
+    margin: 72px auto 0 auto;
     background-color: #CCCCCC;
     font-size: 18px;
     line-height: 1.5;
@@ -42,4 +53,17 @@ body {
         text-align: center;
     }
 
+}
+
+@media (max-width: 700px) {
+    .Header {
+        height: auto;
+        min-height: 72px;
+        flex-wrap: wrap;
+        gap: 4px 16px;
+        padding: 12px 5%;
+    }
+    .Main {
+        margin-top: 104px;
+    }
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <section class="Main">
+        <div class="Culture">
+            <div class="Lam_kinh" style="display: flex; justify-content: space-around;">
+                <div class="Noi_dung">
+                    <h style="font-size: 30px; font-weight: bold;">Lễ hội Lam Kinh</h>
+                    <p><a style="font-weight: bold;">Thời gian:</a> Thường diễn ra vào ngày 21–22 tháng 8 âm lịch tại Lam Kinh.</p>
+                    <p><a style="font-weight: bold;">Phần lễ:</a> Rước kiệu, dâng hương, đọc chúc văn và các nghi thức tưởng niệm.</p>
+                    <p><a style="font-weight: bold;">Phần hội:</a> Biểu diễn nghệ thuật, trò chơi dân gian và các hoạt động văn hóa truyền thống.</p>
+                </div>
+                <img src="../../public/images/lamkinh.jpg" alt="lehoilamkinh" width="400" height="200">
+            </div>
+            <div class="Cau_ngu" style="display: flex; justify-content: space-around;">
+                <div class="Noi_dung">
+                    <h style="font-size: 30px; font-weight: bold;">Lễ hội cầu ngư</h>
+                </div>
+        </div>
+        <div class="Festival">
+
+        </div>
+    </section>
+    <div id="footer-container"></div>
+    <script>
+        fetch('../components/header.html')
+            .then((response) => {
+                if (!response.ok) throw new Error('Could not load the site header.');
+                return response.text();
+            })
+            .then((header) => {
+                document.querySelector('#header-container').innerHTML = header;
+            })
+            .catch((error) => console.error(error));
+        
+        fetch('../components/footer.html')
+            .then((response) => {
+                if (!response.ok) throw new Error('Could not load the site footer.');
+                return response.text();
+            })
+            .then((footer) => {
+                document.querySelector('#footer-container').innerHTML = footer;
+            })
+            .catch((error) => console.error(error));
+    </script>
+</body>
+</html>
