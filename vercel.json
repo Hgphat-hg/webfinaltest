@@ -1,8 +1,19 @@
 {
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/src/pages/Homepage.html",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/",
       "destination": "/src/pages/Homepage.html"
+    },
+    {
+      "source": "/Websites/webfinaltest/:path*",
+      "destination": "/:path*"
     }
   ]
 }
