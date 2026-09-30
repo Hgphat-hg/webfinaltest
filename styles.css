@@ -7,11 +7,13 @@ body {
     display: flex;
     justify-content: space-between;
     position: fixed;
+    z-index: 10;
     top: 0;
     left: 0;
     height: 60px;
     width: 100%;
     background-color: gray;
+    transition: transform 0.25s ease;
     ul {
         display: flex;
         justify-content: space-around;
@@ -41,6 +43,59 @@ body {
     font-size: 18px;
     line-height: 1.5;
 }
+.Cuisine {
+    padding: 20px;
+}
+.Cuisine h2 {
+    margin: 0 0 16px;
+    text-align: center;
+}
+.Cuisine-slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.Cuisine-track {
+    display: flex;
+    width: 600%;
+    transform: translateX(-16.666667%);
+    transition: transform 0.6s ease;
+}
+.Cuisine-track img {
+    flex: 0 0 16.666667%;
+    width: 16.666667%;
+    height: 360px;
+    object-fit: cover;
+}
+.Cuisine-track.is-resetting {
+    transition: none;
+}
+.Cuisine-control {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    transform: translateY(-50%);
+}
+.Cuisine-control:disabled {
+    cursor: default;
+    opacity: 0.6;
+}
+.Cuisine-prev {
+    left: 12px;
+}
+.Cuisine-next {
+    right: 12px;
+}
 .Footer {
     display: flex;
     justify-content: center;
@@ -66,4 +121,16 @@ body {
     .Main {
         margin-top: 104px;
     }
+    .Cuisine-track img {
+        height: 240px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .Cuisine-track {
+        transition: none;
+    }
+}
+.Header.is-hidden {
+    transform: translateY(-100%);
 }
