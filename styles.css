@@ -25,17 +25,39 @@ body {
         }
     }
 }
-
 .Header ul li a {
   text-decoration: none;
   color: black;
   transition: color 0.3s ease;
 }
-
 .Header ul li a:hover {
     color: #FF9999;
 }
-
+.Header ul li {
+    position: relative;
+}
+.Header ul .history-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    margin: 0;
+    padding: 8px 0;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: gray;
+}
+.Header ul .history-submenu li {
+    margin: 0;
+    padding: 8px 12px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+.Header ul .history-menu:hover > .history-submenu,
+.Header ul .history-menu:focus-within > .history-submenu {
+    display: flex;
+}
 .Main {
     width: 75%;
     margin: 60px auto 0 auto;
@@ -43,13 +65,16 @@ body {
     font-size: 18px;
     line-height: 1.5;
 }
+.tieusu {
+    display: flex;
+}
+.hinhanh {
+    border: 2px solid: black;
+}
 .Cuisine {
     padding: 20px;
 }
-.Cuisine h2 {
-    margin: 0 0 16px;
-    text-align: center;
-}
+
 .Cuisine-slider {
     overflow: hidden;
     position: relative;

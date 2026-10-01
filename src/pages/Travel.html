@@ -12,26 +12,6 @@
         
     </section>
     <div id="footer-container"></div>
-    <script>
-        fetch('../components/header.html')
-            .then((response) => {
-                if (!response.ok) throw new Error('Could not load the site header.');
-                return response.text();
-            })
-            .then((header) => {
-                document.querySelector('#header-container').innerHTML = header;
-            })
-            .catch((error) => console.error(error));
-        
-        fetch('../components/footer.html')
-            .then((response) => {
-                if (!response.ok) throw new Error('Could not load the site footer.');
-                return response.text();
-            })
-            .then((footer) => {
-                document.querySelector('#footer-container').innerHTML = footer;
-            })
-            .catch((error) => console.error(error));
-    </script>
+    <script src="../lib/scripts.js"></script>
 </body>
 </html>
