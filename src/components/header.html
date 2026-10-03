@@ -2,11 +2,16 @@
   <a href="/Websites/webfinaltest/src/pages/Homepage.html" style="text-decoration: none; color: black;">
     <img src="logo.png" alt="logo">
   </a>
-  <ul style="list-style-type: none; padding: 0; margin: 0;">
+  <button class="menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="site-nav">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="site-nav" id="site-nav" style="list-style-type: none; padding: 0; margin: 0;">
     <li><a href="/Websites/webfinaltest/src/pages/Homepage.html">Home</a></li>
     <li class="history-menu">
-      <a>History</a>
-      <ul class="history-submenu" style="list-style-type: none;">
+      <button class="history-toggle" type="button" aria-expanded="false" aria-controls="history-submenu">History</button>
+      <ul class="history-submenu" id="history-submenu" style="list-style-type: none;">
         <li><a href="/Websites/webfinaltest/src/pages/Historical_character.html">Historical character</a></li>
         <li><a href="/Websites/webfinaltest/src/pages/local_history.html">Local history</a></li>
       </ul>

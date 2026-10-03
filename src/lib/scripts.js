@@ -9,8 +9,53 @@ const loadComponent = (selector, path, errorMessage) => {
         })
         .then((content) => {
             container.innerHTML = content;
+            if (selector === '#header-container') {
+                initializeHeader(container);
+            }
         })
         .catch((error) => console.error(error));
+};
+
+const initializeHeader = (container) => {
+    const header = container.querySelector('.Header');
+    const menuToggle = header.querySelector('.menu-toggle');
+    const siteNav = header.querySelector('.site-nav');
+    const historyMenu = header.querySelector('.history-menu');
+    const historyToggle = header.querySelector('.history-toggle');
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = menuToggle.getAttribute('aria-expanded') !== 'true';
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+        menuToggle.setAttribute('aria-label', isOpen ? 'Đóng menu' : 'Mở menu');
+        siteNav.classList.toggle('is-open', isOpen);
+    });
+
+    historyToggle.addEventListener('click', () => {
+        const isOpen = historyToggle.getAttribute('aria-expanded') !== 'true';
+        historyToggle.setAttribute('aria-expanded', String(isOpen));
+        historyMenu.classList.toggle('is-open', isOpen);
+    });
+
+    siteNav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Mở menu');
+            siteNav.classList.remove('is-open');
+            historyToggle.setAttribute('aria-expanded', 'false');
+            historyMenu.classList.remove('is-open');
+        });
+    });
+
+    header.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Mở menu');
+            siteNav.classList.remove('is-open');
+            historyToggle.setAttribute('aria-expanded', 'false');
+            historyMenu.classList.remove('is-open');
+            menuToggle.focus();
+        }
+    });
 };
 
 const componentBase = new URL('../', document.currentScript.src);
