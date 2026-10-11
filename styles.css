@@ -374,7 +374,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; 
-    background-color: rgb(106, 64, 45);
+    background-color: rgb(155, 133, 104);
     ul {
         display: flex;
         flex-direction: column;

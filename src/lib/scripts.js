@@ -9,6 +9,15 @@ const loadComponent = (selector, path, errorMessage) => {
         })
         .then((content) => {
             container.innerHTML = content;
+            const componentUrl = new URL(path, document.baseURI);
+            container.querySelectorAll('[href], [src]').forEach((element) => {
+                ['href', 'src'].forEach((attribute) => {
+                    const value = element.getAttribute(attribute);
+                    if (value && value.startsWith('.')) {
+                        element.setAttribute(attribute, new URL(value, componentUrl).href);
+                    }
+                });
+            });
             if (selector === '#header-container') {
                 initializeHeader(container);
             }
