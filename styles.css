@@ -12,7 +12,7 @@ body {
     left: 0;
     height: 60px;
     width: 100%;
-    background-color: gray;
+    background-color: rgb(253, 236, 192);
     transition: transform 0.25s ease;
     ul {
         display: flex;
@@ -27,27 +27,28 @@ body {
 }
 .Header ul li a {
   text-decoration: none;
-  color: black;
+  color: rgb(155, 133, 104);
   transition: color 0.3s ease;
 }
 .Header .history-toggle {
     padding: 0;
     border: 0;
     background: none;
-    color: black;
+    color: rgb(155, 133, 104);
     cursor: pointer;
     font: inherit;
     transition: color 0.3s ease;
 }
 .Header .history-toggle:hover,
 .Header .history-toggle:focus-visible {
-    color: #FF9999;
+    color: rgb(174, 10, 40);
 }
 .Header .menu-toggle {
     display: none;
 }
 .Header ul li a:hover {
-    color: #FF9999;
+    color: rgb(174, 10, 40);
+    text-decoration: underline;
 }
 .Header ul li {
     position: relative;
@@ -62,7 +63,7 @@ body {
     padding: 8px 0;
     flex-direction: column;
     align-items: stretch;
-    background-color: gray;
+    background-color: rgb(253, 236, 192);
 }
 .Header ul .history-submenu li {
     margin: 0;
@@ -373,7 +374,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; 
-    background-color: gray;
+    background-color: rgb(106, 64, 45);
     ul {
         display: flex;
         flex-direction: column;
@@ -454,7 +455,7 @@ body {
         display: none;
         align-items: stretch;
         padding: 8px 16px !important;
-        background: #808080;
+        background: rgb(253, 236, 192);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
     }
     .Header .site-nav.is-open {
